@@ -6,7 +6,7 @@ let images = document.querySelectorAll('.image-to-show')
 let imgContainer = document.querySelector('.images-wrapper')
 
 
-$(`#${4 - currentImg}`).fadeIn("slow")
+$(`#${4 - currentImg}`).fadeIn(500,"linear")
 
 
 function myFunction() {
@@ -18,12 +18,12 @@ function myFunction() {
 
     currentImg--
 
-    $(`#${4 - currentImg}`).fadeIn("slow")
+    $(`#${4 - currentImg}`).fadeIn(500,"linear")
   } else {
 
 
     currentImg = currentImg + 3
-    $(`#${4 - currentImg}`).fadeIn("slow")
+    $(`#${4 - currentImg}`).fadeIn(500,"linear")
   }
 
 
