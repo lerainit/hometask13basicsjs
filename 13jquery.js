@@ -32,8 +32,6 @@ let timerRemove = window.setInterval(() => {
   let elem = $(`#${4 - currentImg}`)
   $(`#${4 - currentImg}`).fadeOut(500, "linear")
 
-  //if (elem) { elem.remove() }
-
   imgContainer.insertAdjacentHTML('afterbegin', `<img id="1" src="./img/1.jpg" alt="image of game" class="image-to-show" />
       <img id="2" src="./img/2.jpg" alt="image of game" class="image-to-show" />
       <img id="3" src="./img/3.JPG" alt="image of game" class="image-to-show" />
