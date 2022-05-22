@@ -6,45 +6,41 @@ let images = document.querySelectorAll('.image-to-show')
 let imgContainer = document.querySelector('.images-wrapper')
 
 
-$(`#${4 - currentImg}`).fadeIn(500,"linear")
+$(`#${4 - currentImg}`).fadeIn(500, "linear")
 
 
-function myFunction() {
+function setAnimation() {
 
 
   if (currentImg > 0) {
 
-
-
     currentImg--
 
-    $(`#${4 - currentImg}`).fadeIn(500,"linear")
+    $(`#${4 - currentImg}`).fadeIn(500, "linear")
+
   } else {
-
-
     currentImg = currentImg + 3
-    $(`#${4 - currentImg}`).fadeIn(500,"linear")
+    $(`#${4 - currentImg}`).fadeIn(500, "linear")
+
   }
 
 
 }
 
-
-let timer = window.setInterval(() => {
+let timerRemove = window.setInterval(() => {
 
   let elem = $(`#${4 - currentImg}`)
-  if (elem) { elem.remove() }
+  $(`#${4 - currentImg}`).fadeOut(500, "linear")
+
+  //if (elem) { elem.remove() }
 
   imgContainer.insertAdjacentHTML('afterbegin', `<img id="1" src="./img/1.jpg" alt="image of game" class="image-to-show" />
       <img id="2" src="./img/2.jpg" alt="image of game" class="image-to-show" />
       <img id="3" src="./img/3.JPG" alt="image of game" class="image-to-show" />
       <img id="4" src="./img/4.png" alt="image of game" class="image-to-show" />`)
 
-
-  myFunction()
-
-
-}, 3000)
+}, 2500)
+let timerSet = window.setInterval(() => { setAnimation() }, 3000)
 
 
 
@@ -107,7 +103,8 @@ const button2 = document.querySelector('.continue')
 
 button.addEventListener('click', () => {
 
-  window.clearInterval(timer)
+  window.clearInterval(timerRemove)
+  window.clearInterval(timerSet)
 
   window.clearInterval(timerSpan)
   window.clearInterval(myTimer)
@@ -117,20 +114,20 @@ button.addEventListener('click', () => {
 
 button2.addEventListener('click', () => {
 
-  timer = window.setInterval(() => {
+  timerRemove = window.setInterval(() => {
 
     let elem = $(`#${4 - currentImg}`)
-    if (elem) { elem.remove() }
+    $(`#${4 - currentImg}`).fadeOut(500, "linear")
 
     imgContainer.insertAdjacentHTML('afterbegin', `<img id="1" src="./img/1.jpg" alt="image of game" class="image-to-show" />
       <img id="2" src="./img/2.jpg" alt="image of game" class="image-to-show" />
       <img id="3" src="./img/3.JPG" alt="image of game" class="image-to-show" />
       <img id="4" src="./img/4.png" alt="image of game" class="image-to-show" />`)
 
+  }, 2500)
+  timerSet = window.setInterval(() => { setAnimation() }, 3000)
 
-    myFunction()
-
-  }, 3000)
+})
 
 
 })
