@@ -93,8 +93,6 @@ let myTimer = window.setInterval(() => {
 
 }, 3000)
 
-
-
 const button = document.querySelector('button')
 const button2 = document.querySelector('.continue')
 
@@ -108,7 +106,6 @@ button.addEventListener('click', () => {
   window.clearInterval(myTimer)
 
 })
-
 
 button2.addEventListener('click', () => {
 
@@ -126,7 +123,4 @@ button2.addEventListener('click', () => {
   timerSet = window.setInterval(() => { setAnimation() }, 3000)
 
 })
-
-
-
 
